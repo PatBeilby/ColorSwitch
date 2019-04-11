@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace ColorSwitch
 {
     public class GameManager : MonoBehaviour
     {
+
+        public Button Retry;
+
+
+
         #region Singleton
         public static GameManager Instance = null;
         // Use this for initialization
@@ -27,7 +33,12 @@ namespace ColorSwitch
         public void ResetGame()
         {
             Scene currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.buildIndex);
+            SceneManager.LoadScene(0);
+        }
+
+        public void Quit()
+        {
+            Application.Quit();
         }
     }
 }
